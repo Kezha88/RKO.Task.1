@@ -5,9 +5,9 @@ using System.Windows.Controls;
 
 namespace RKO.Task._1.View.Pages.TaskPages
 {
-    public partial class Task1Page : Page
+    public partial class Task6Page : Page
     {
-        public Task1Page()
+        public Task6Page()
         {
             InitializeComponent();
         }
@@ -16,24 +16,25 @@ namespace RKO.Task._1.View.Pages.TaskPages
         {
             CoreNavigate.MyConnection?.Navigate(new MainPage());
         }
-        private void BtnTask1_Click(object sender, RoutedEventArgs e)
+
+        private void BtnTask6_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 double y = Convert.ToDouble(TbY.Text);
-                double f = Convert.ToDouble(TbF.Text);
+                double i = Convert.ToDouble(TbI.Text);
 
-                MessageBox.Show($"G = {Math.Exp(2*y) + Math.Sin(f)/Math.Log10(3.8*y+f)}", "Системное сообщение", 
-                    MessageBoxButton.OK, 
+                MessageBox.Show($"L = {(0.81*Math.Cos(i))/Math.Log10(y)+2*Math.Pow(i,3)}", "Системное сообщение",
+                    MessageBoxButton.OK,
                     MessageBoxImage.Error);
 
-                TbY.Text = string.Empty; 
-                TbF.Text = string.Empty;   
+                TbY.Text = string.Empty;
+                TbI.Text = string.Empty;
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message.ToString(),"Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message.ToString(), "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
